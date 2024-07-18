@@ -1,0 +1,10 @@
+Backend
+
+1.User signup/Login
+
+2.Search for repos (Classified into 3 groups Easy, intermediate, Hard)
+
+3.Repos which have been recently merged <=60days
+
+4.Repos in which there is no activity for more than 60 days those will move to inactive section
+
