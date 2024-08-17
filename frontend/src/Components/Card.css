@@ -1,0 +1,34 @@
+/* Card.css */
+.app {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+  
+  .card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 16px;
+    margin: 16px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    flex: 1 1 calc(33.333% - 32px); /* Adjust percentage and margin for spacing */
+    
+  }
+  
+  .card h2 {
+    margin-top: 0;
+  }
+  
+  .card p {
+    margin: 8px 0;
+  }
+  
+  .card a {
+    color: #dc049f;
+    text-decoration: none;
+  }
+  
+  .card a:hover {
+    text-decoration: underline;
+  }
+  

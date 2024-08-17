@@ -1,0 +1,63 @@
+/* Card.css */
+.app {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 20px;
+}
+
+.card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 16px;
+  margin: 16px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  flex: 1 1 calc(33.333% - 32px); /* Adjust percentage and margin for spacing */
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  background: linear-gradient(135deg, #f0f4f8, #e2e2e2);
+  /* Use CSS gradient to make the card more vibrant */
+}
+
+.card:hover {
+  background: linear-gradient(135deg, #e2e2e2, #f0f4f8);
+  /* Animated background gradient change on hover */
+  transform: scale(1.05);
+  /* Slightly increase card size on hover */
+}
+
+.card h2 {
+  margin-top: 0;
+  color: #333;
+  font-size: 1.5rem;
+}
+
+.card p {
+  margin: 8px 0;
+  color: #555;
+}
+
+.card a {
+  color: #007bff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.card a:hover {
+  text-decoration: underline;
+}
+
+@keyframes colorChange {
+  0% {
+    background-color: #f0f4f8;
+  }
+  50% {
+    background-color: #e2e2e2;
+  }
+  100% {
+    background-color: #f0f4f8;
+  }
+}
+
+.card {
+  animation: colorChange 5s infinite;
+}

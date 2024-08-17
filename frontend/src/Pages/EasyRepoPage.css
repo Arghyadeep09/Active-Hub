@@ -1,0 +1,75 @@
+/* Card.css */
+.app {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 20px;
+}
+
+.card {
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 16px;
+  margin: 16px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  flex: 1 1 calc(33.333% - 32px); /* Adjust percentage and margin for spacing */
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  background: linear-gradient(135deg, #2c3e50, #34495e); /* Dark blue gradient as base color */
+  position: relative;
+  overflow: hidden;
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 300%;
+  height: 300%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0) 70%);
+  transform: translate(-50%, -50%);
+  opacity: 0.3;
+  pointer-events: none;
+  animation: glow 1.5s infinite;
+}
+
+.card:hover {
+  background: linear-gradient(135deg, #1e90ff, #00bfff); /* Neon blue gradient on hover */
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(30, 144, 255, 0.8); /* Glowing effect */
+}
+
+.card h2 {
+  margin-top: 0;
+  color: #f10707;
+  font-size: 1.5rem;
+  text-shadow: 0 0 5px rgba(184, 22, 22, 0.8);  
+}
+
+.card p {
+  margin: 8px 0;
+  color: #ddd;
+}
+
+.card a {
+  color: #42b838;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.card a:hover {
+  text-decoration: underline;
+  color: #ff4500; /* Neon orange color on hover */
+}
+
+@keyframes glow {
+  0% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 0.6;
+  }
+  100% {
+    opacity: 0.3;
+  }
+}

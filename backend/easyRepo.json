@@ -1,0 +1,42 @@
+[
+  {
+    "name": "first-contributions",
+    "owner": "firstcontributions",
+    "URL": "https://github.com/firstcontributions/first-contributions",
+    "description": "A project to help beginners make their first open source contribution.",
+    "techStack": ["JavaScript", "CSS", "Shell"],
+    "difficulty": "easy"
+  },
+  {
+    "name": "docusaurus",
+    "owner": "facebook",
+    "URL": "https://github.com/facebook/docusaurus",
+    "description": "Easy to maintain open source documentation websites.",
+    "techStack": ["JavaScript", "TypeScript", "CSS", "Shell", "HTML"],
+    "difficulty": "easy"
+  },
+  {
+    "name": "al-folio",
+    "owner": "alshedivat",
+    "URL": "https://github.com/alshedivat/al-folio",
+    "description": "A beautiful, simple, clean, and responsive Jekyll theme for academics.",
+    "techStack": ["HTML", "CSS", "JavaScript", "Ruby"],
+    "difficulty": "easy"
+  },
+  {
+    "name": "raytracing.github.io",
+    "owner": "RayTracing",
+    "URL": "https://github.com/RayTracing/raytracing.github.io",
+    "description": "Source code for 'Ray Tracing in One Weekend' book series.",
+    "techStack": ["C++", "HTML", "CSS"],
+    "difficulty": "easy" 
+  },
+  {
+    "name": "home-assistant.io",
+    "owner": "home-assistant",
+    "URL": "https://github.com/home-assistant/home-assistant.io",
+    "description": "Home Assistant's website repository, including the documentation.",
+    "techStack": ["Python", "HTML", "CSS", "JavaScript", "Dockerfile"],
+    "difficulty": "easy" 
+  }
+]

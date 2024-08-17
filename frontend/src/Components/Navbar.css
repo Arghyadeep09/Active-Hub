@@ -1,0 +1,79 @@
+.header {
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-color: transparent;
+    z-index: var(--z-fixed);
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    height: var(--header-height);
+    margin: 1rem;
+}
+
+.nav__logo {
+    color: var(--first-color);
+    transition: color 0.4s;
+    font-size: var(--h2-font-size);
+    font-family: var(--second-font);
+}
+
+.nav__toggle,
+.nav__close {
+    font-size: 1.5rem;
+    color: var(--title-color);
+    cursor: pointer;
+}
+
+.nav__cta {
+    background-color: var(--first-color);
+    color: var(--title-color);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    padding: 0.75rem 1.5rem;
+}
+
+.nav__list {
+    display: flex;
+    /* flex-direction: column; */
+    row-gap: 2.5rem; /* This is for vertical gap if you change the flex-direction to column */
+    gap: 2rem; /* This adds a horizontal gap between the links */
+}
+
+.nav__link {
+    color: var(--title-color);
+    font-weight: var(--font-semi-bold);
+    transition: color 0.4s;
+}
+
+.nav__link:hover {
+    color: var(--first-color);
+}
+
+.nav__close {
+    position: absolute;
+    top: 1rem;
+    right: 1.5rem;
+}
+
+.show-menu {
+    right: 0;
+}
+
+
+.button1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 20px;  /* Adjust padding as needed */
+    background-color: lightblue;  /* Optional, for visibility */
+    border: none;       /* Optional, remove default border */
+    border-radius: 4px; /* Optional, add rounded corners */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional, add shadow */
+}

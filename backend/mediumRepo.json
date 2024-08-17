@@ -1,0 +1,35 @@
+[
+    {
+        "name": "react",
+        "owner": "facebook",
+        "URL": "https://github.com/facebook/react",
+        "description": "A declarative, efficient, and flexible JavaScript library for building user interfaces.",
+        "techStack": ["JavaScript", "TypeScript", "HTML", "CSS"],
+        "difficulty": "medium" 
+      },
+      {
+        "name": "bevy",
+        "owner": "bevyengine",
+        "URL": "https://github.com/bevyengine/bevy",
+        "description": "A refreshingly simple data-driven game engine built in Rust.",
+        "techStack": ["Rust", "GLSL", "Python"],
+        "difficulty": "medium" 
+      },
+      {
+        "name": "forem",
+        "owner": "forem",
+        "URL": "https://github.com/forem/forem",
+        "description": "For empowering community through open source software.",
+        "techStack": ["Ruby", "JavaScript", "TypeScript", "Dockerfile", "HTML", "CSS"],
+        "difficulty": "medium" 
+      },
+      {
+        "name": "Community-Website",
+        "owner": "HITK-TECH-Community",
+        "URL": "https://github.com/HITK-TECH-Community/Community-Website",
+        "description": "A website to connect and manage the community's activities and events.",
+        "techStack": ["JavaScript", "HTML", "CSS", "Python"],
+        "difficulty": "medium" 
+      }
+       
+]

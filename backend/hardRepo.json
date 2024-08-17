@@ -1,0 +1,38 @@
+[
+    {
+        "name": "hyperswitch",
+        "owner": "juspay",
+        "URL": "https://github.com/juspay/hyperswitch",
+        "description": "A highly performant and flexible payment switch designed to handle high volumes and complex routing.",
+        "techStack": ["Go", "Dockerfile", "YAML"],
+        "difficulty": "hard" 
+      },
+      
+      {
+        "name": "cal.com",
+        "owner": "calcom",
+        "URL": "https://github.com/calcom/cal.com",
+        "description": "An open-source scheduling platform that integrates with your calendar.",
+        "techStack": ["TypeScript", "Node.js", "React", "GraphQL"],
+        "difficulty": "hard" 
+      },
+      
+      {
+        "name": "uppy",
+        "owner": "transloadit",
+        "URL": "https://github.com/transloadit/uppy",
+        "description": "The next open-source file uploader for web browsers.",
+        "techStack": ["JavaScript", "TypeScript", "CSS", "HTML"],
+        "difficulty": "hard" 
+      },
+      {
+        "name": "firecracker",
+        "owner": "firecracker-microvm",
+        "URL": "https://github.com/firecracker-microvm/firecracker",
+        "description": "A lightweight virtual machine monitor for creating and managing microVMs.",
+        "techStack": ["Rust", "Python", "Shell"],
+        "difficulty": "hard" 
+      }
+      
+       
+]
