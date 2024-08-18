@@ -8,56 +8,69 @@
 
 .card {
   border: 1px solid #ddd;
-  border-radius: 8px;
+  border-radius: 12px; /* Slightly larger radius for rounded corners */
   padding: 16px;
   margin: 16px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Slightly more pronounced shadow */
   flex: 1 1 calc(33.333% - 32px); /* Adjust percentage and margin for spacing */
-  transition: background-color 0.3s ease, transform 0.3s ease;
-  background: linear-gradient(135deg, #f0f4f8, #e2e2e2);
-  /* Use CSS gradient to make the card more vibrant */
+  background: linear-gradient(135deg, #222121, #9fa36e); /* Neon green and teal gradient */
+  transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative; /* For overlay effect */
+  overflow: hidden; /* Ensure pseudo-elements stay within card */
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 300%;
+  height: 300%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0) 70%);
+  transform: translate(-50%, -50%);
+  opacity: 0.3;
+  pointer-events: none;
+  animation: glow 2s infinite alternate;
 }
 
 .card:hover {
-  background: linear-gradient(135deg, #e2e2e2, #f0f4f8);
-  /* Animated background gradient change on hover */
+  /* No change on hover */
+  background: linear-gradient(135deg, #525251, #3b615c); /* Keep the same neon gradient */
   transform: scale(1.05);
-  /* Slightly increase card size on hover */
+  box-shadow: 0 0 20px rgba(57, 255, 20, 0.8); /* Glowing effect */
 }
 
 .card h2 {
   margin-top: 0;
-  color: #333;
+  color: #fff; /* White color for heading for contrast */
   font-size: 1.5rem;
 }
 
 .card p {
   margin: 8px 0;
-  color: #555;
+  color: #fff; /* White color for text for readability */
 }
 
 .card a {
-  color: #007bff;
+  color: #fff; /* White color for links */
   text-decoration: none;
   font-weight: bold;
 }
 
 .card a:hover {
   text-decoration: underline;
+  color: #fff; /* Keep links white on hover */
 }
 
-@keyframes colorChange {
+/* Animation for glow effect */
+@keyframes glow {
   0% {
-    background-color: #f0f4f8;
+    opacity: 0.2;
   }
   50% {
-    background-color: #e2e2e2;
+    opacity: 0.6;
   }
   100% {
-    background-color: #f0f4f8;
+    opacity: 0.2;
   }
-}
-
-.card {
-  animation: colorChange 5s infinite;
 }

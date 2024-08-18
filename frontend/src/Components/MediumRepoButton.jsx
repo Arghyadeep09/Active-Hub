@@ -24,8 +24,13 @@ const MediumRepoButton = ({style}) => {
   
   return (
     <div>
-      <button style={{...style,padding:'10px 30px',cursor:'pointer',color:'white',background:'#eb853c',fontFamily:'cursive',fontSize:'18px'}} 
-      className="button1" onClick={handleButtonClick}>Medium</button>
+     <button
+         style={{...style,padding:'10px 30px',cursor:'pointer',color:'black',backgroundColor:'#b4cf68',fontFamily:'sans-serif',fontSize:'18px' ,fontWeight:'400'}}
+        className="button1"
+        onClick={handleButtonClick}
+      >
+        Medium
+      </button>
     </div>
   )
 }
