@@ -33,8 +33,7 @@ const Signup = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await Axios.post('active-hub-three.vercel.app
-/api/users/signup', formData);
+      const response = await Axios.post('https://active-hub-three.vercel.app/api/users/signup', formData);
       setMessage(response.data.message);
       setFormData({
         name: '',
