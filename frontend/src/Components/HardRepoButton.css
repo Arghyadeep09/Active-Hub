@@ -1,0 +1,23 @@
+.button1 {
+    border: none;
+    border-radius: 8px;
+    background: #d4af37; /* Matte golden color */
+    color: white;
+    padding: 10px 30px;
+    font-family: cursive;
+    font-size: 18px;
+    cursor: pointer;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+  }
+  
+  .button1:hover {
+    box-shadow: 0 0 15px rgba(212, 175, 55, 0.8), 0 0 25px rgba(212, 175, 55, 0.8), 0 0 35px rgba(212, 175, 55, 0.8);
+    /* Glowing effect on hover */
+    transform: scale(1.05); /* Slight scale effect for better visual feedback */
+  }
+  
+  .button1:active {
+    box-shadow: 0 0 20px rgba(212, 175, 55, 1);
+    /* Stronger glowing effect on click */
+  }
+  

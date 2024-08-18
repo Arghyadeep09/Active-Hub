@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Axios from 'axios';
-import './MediumRepoPage.css';
+//import './MediumRepoPage.css';
 
 const MediumRepoPage = () => {
     const [mediumrepositories, setMediumrepositories] = useState([]);

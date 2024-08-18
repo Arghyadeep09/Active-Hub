@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import  Axios  from 'axios';
-import './Card.css';
+// import './Card.css';
+
 
 const Card = () => {
   const [data,setData]=useState([]);

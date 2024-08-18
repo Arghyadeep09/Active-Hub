@@ -1,3 +1,6 @@
+/* Navbar.css */
+
+/* Base styles */
 .header {
     width: 100%;
     top: 0;
@@ -8,18 +11,79 @@
 
 .nav {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
+    align-items: center; /* Align items vertically in the center */
+    justify-content: space-between; /* Distribute space between logo, links, and toggle */
     position: relative;
     height: var(--header-height);
     margin: 1rem;
+    flex-wrap: nowrap; /* Ensure items stay on one line */
 }
 
+
+
 .nav__logo {
-    color: var(--first-color);
+    color: #fff;
+    font-size: 1.5rem;
+    flex-shrink: 0; /* Prevent the logo from shrinking */
+    animation: logoColorChange 10s infinite; /* Apply the color animation */
+    font-weight: 500;
+}
+
+/* Keyframes for color animation */
+@keyframes logoColorChange {
+    0% {
+        color: #589d8e; /* Starting color */
+    }
+    25% {
+        color: #d4af37; /* Transition color */
+    }
+    50% {
+        color: #f0f0f0; /* Another transition color */
+    }
+    75% {
+        color: #b4cf68; /* Another transition color */
+    }
+    100% {
+        color: #9b5b3c; /* Ending color matches the starting color for a seamless loop */
+    }
+}
+
+
+
+.nav__list {
+    display: flex;
+    gap: 2rem; /* Space between the navigation links */
+    margin-left: auto; /* Align the list to the right */
+    flex-wrap: nowrap; /* Ensure items stay on one line */
+}
+
+.nav__item {
+    list-style: none;
+}
+
+.nav__link {
+    color: #ddd;
+    font-weight: 600;
     transition: color 0.4s;
-    font-size: var(--h2-font-size);
-    font-family: var(--second-font);
+    text-decoration: none; /* Remove underline from links */
+}
+
+.nav__link:hover {
+    color: #f0f0f0;
+}
+
+.nav__cta {
+    background-color: #d4af37;
+    color: #fff;
+    border-radius: 4px;
+    padding: 10px 20px;
+    flex-shrink: 0; /* Prevent the button from shrinking */
+    text-align: center;
+}
+
+.nav__cta:hover {
+    background-color: #b4cf68;
+    box-shadow: 0 0 10px gold;
 }
 
 .nav__toggle,
@@ -29,51 +93,8 @@
     cursor: pointer;
 }
 
-.nav__cta {
-    background-color: var(--first-color);
-    color: var(--title-color);
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    padding: 0.75rem 1.5rem;
-}
-
-.nav__list {
-    display: flex;
-    /* flex-direction: column; */
-    row-gap: 2.5rem; /* This is for vertical gap if you change the flex-direction to column */
-    gap: 2rem; /* This adds a horizontal gap between the links */
-}
-
-.nav__link {
-    color: var(--title-color);
-    font-weight: var(--font-semi-bold);
-    transition: color 0.4s;
-}
-
-.nav__link:hover {
-    color: var(--first-color);
-}
-
 .nav__close {
     position: absolute;
     top: 1rem;
     right: 1.5rem;
-}
-
-.show-menu {
-    right: 0;
-}
-
-
-.button1 {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 10px 20px;  /* Adjust padding as needed */
-    background-color: lightblue;  /* Optional, for visibility */
-    border: none;       /* Optional, remove default border */
-    border-radius: 4px; /* Optional, add rounded corners */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional, add shadow */
 }
