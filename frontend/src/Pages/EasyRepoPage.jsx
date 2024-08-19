@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Axios from 'axios';
 //import './EasyRepoPage.css';
 //import '../Components/Card.css'
-import '../index.css'
+
 
 const EasyRepoPage = () => {
     const [easyrepositories, setEasyrepositories] = useState([]);

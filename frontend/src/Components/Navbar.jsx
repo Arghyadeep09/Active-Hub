@@ -83,9 +83,9 @@ const Navbar = ({ usertoken }) => {
             </div>
           </div>
 
-          {/* <div className="nav__toggle" id="nav-toggle">
+          <div className="nav__toggle" id="nav-toggle">
             <IoMenu />
-          </div> */}
+          </div>
         </nav>
       </header>
     </>
