@@ -8,7 +8,7 @@ const MediumRepoPage = () => {
     useEffect(() => {
         const fetchRepositories = async () => {
           try {
-            const response = await Axios.get('http://localhost:4000/mediumRepoData'); 
+            const response = await Axios.get('https://active-hub.onrender.com/mediumRepoData'); 
             console.log(response)
             if (response.statusText!=="OK") {
               throw new Error('Network response was not ok');

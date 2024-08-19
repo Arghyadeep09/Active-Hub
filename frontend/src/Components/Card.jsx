@@ -7,7 +7,7 @@ const Card = () => {
   const [data,setData]=useState([]);
 
   const getData=async()=>{
-    const response=await Axios.get("http://localhost:4000/getData")
+    const response=await Axios.get("https://active-hub.onrender.com/getData")
     setData(response.data)  
   }
 
