@@ -9,7 +9,7 @@ const mediumRepo= require('./models/mediumRepo.js');
 const easyRepo=require('./models/easyRepo.js');
 const hardRepo = require('./models/hardRepo.js');
 app.use(cors({
-  origin: 'http://localhost:3000'
+  origin: 'https://active-hub-frontend.vercel.app'
 }));
 const port = process.env.PORT || 4000;
 
