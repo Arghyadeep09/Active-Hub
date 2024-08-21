@@ -10,8 +10,10 @@ const MediumRepoPage = () => {
           try {
             const response = await Axios.get('https://active-hub.onrender.com/mediumRepoData'); 
             console.log(response)
-            if (response.statusText!=="OK") {
+            
+            if (!response) {
               throw new Error('Network response was not ok');
+              return;
             }
             setMediumrepositories(response.data);
           } catch (error) {
@@ -24,7 +26,7 @@ const MediumRepoPage = () => {
 
       return (
         <div className="app">
-      {mediumrepositories.map((repo) => (
+      {mediumrepositories && mediumrepositories.map((repo) => (
         <div className="card" key={repo._id}>
           <h2>{repo.name}</h2>
           <p><strong>Owner:</strong> {repo.owner}</p>
