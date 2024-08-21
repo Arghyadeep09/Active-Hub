@@ -1,32 +1,34 @@
-import React, { useEffect, useState } from 'react';
 import Axios from 'axios';
-//import './EasyRepoPage.css';
-//import '../Components/Card.css'
+import React, { useEffect, useState } from 'react';
+import './EasyRepoPage.css';
+import '../Components/Card.css'
 
 
 const EasyRepoPage = () => {
     const [easyrepositories, setEasyrepositories] = useState([]);
 
+    const fetchRepositories = async () => {
+      try {
+        const response = await Axios.get('https://active-hub.onrender.com/easyRepoData'); 
+
+        if (!response) {
+          console.error('Error fetching repositories:', response);
+          return;
+        }
+
+        setEasyrepositories(response.data);
+      } catch (error) {
+        console.error('Error fetching repositories:', error);
+      }
+    };
+
     useEffect(() => {
-        const fetchRepositories = async () => {
-          try {
-            const response = await Axios.get('https://active-hub.onrender.com/easyRepoData'); 
-            console.log(response)
-            if (response.statusText!=="OK") {
-              throw new Error('Network response was not ok');
-            }
-            setEasyrepositories(response.data);
-          } catch (error) {
-            console.error('Error fetching repositories:', error);
-          }
-        };
-    
         fetchRepositories();
       }, []);
 
       return (
         <div className="app">
-      {easyrepositories.map((repo) => (
+      {easyrepositories && easyrepositories.map((repo) => (
         <div className="card" key={repo._id}>
           <h2>{repo.name}</h2>
           <p><strong>Owner:</strong> {repo.owner}</p>
