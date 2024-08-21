@@ -44,26 +44,14 @@ const Navbar = ({ usertoken }) => {
                   Home
                 </NavLink>
               </li>
-              <li className="nav__item">
-                <NavLink to="/news" className="nav__link">
-                  News
-                </NavLink>
-              </li>
+     
               <li className="nav__item">
                 <NavLink to="/about-us" className="nav__link">
                   About Us
                 </NavLink>
               </li>
-              <li className="nav__item">
-                <NavLink to="/favorite" className="nav__link">
-                  Favorite
-                </NavLink>
-              </li>
-              <li className="nav__item">
-                <NavLink to="/location" className="nav__link">
-                  Location
-                </NavLink>
-              </li>
+           
+       
               {token ? (
                 <li className="nav__item" onClick={signout}>
                   <NavLink to="/api/users/login" className="nav__link nav__cta">
@@ -78,14 +66,10 @@ const Navbar = ({ usertoken }) => {
                 </li>
               )}
             </ul>
-            <div className="nav__close" id="nav-close">
-              <IoClose />
-            </div>
+           
           </div>
 
-          <div className="nav__toggle" id="nav-toggle">
-            <IoMenu />
-          </div>
+         
         </nav>
       </header>
     </>

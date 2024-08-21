@@ -52,7 +52,7 @@
 
 .nav__list {
     display: flex;
-    gap: 2rem; /* Space between the navigation links */
+    gap: 3rem; /* Space between the navigation links */
     margin-left: auto; /* Align the list to the right */
     flex-wrap: nowrap; /* Ensure items stay on one line */
 }
