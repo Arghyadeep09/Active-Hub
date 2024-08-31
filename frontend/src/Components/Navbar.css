@@ -6,55 +6,30 @@
     top: 0;
     left: 0;
     background-color: transparent;
-    z-index: var(--z-fixed);
+    z-index: 1000; /* Ensure the header stays on top */
 }
 
 .nav {
     display: flex;
-    align-items: center; /* Align items vertically in the center */
-    justify-content: space-between; /* Distribute space between logo, links, and toggle */
+    align-items: center;
+    justify-content: space-between;
+    height: 60px;
+    padding: 0 1rem;
+    background-color: #333; /* Example background color */
+    z-index: 1000; /* Ensure the navbar stays on top */
     position: relative;
-    height: var(--header-height);
-    margin: 1rem;
-    flex-wrap: nowrap; /* Ensure items stay on one line */
 }
-
-
 
 .nav__logo {
     color: #fff;
     font-size: 1.5rem;
-    flex-shrink: 0; /* Prevent the logo from shrinking */
-    animation: logoColorChange 10s infinite; /* Apply the color animation */
     font-weight: 500;
+    text-decoration: none;
 }
-
-/* Keyframes for color animation */
-@keyframes logoColorChange {
-    0% {
-        color: #589d8e; /* Starting color */
-    }
-    25% {
-        color: #d4af37; /* Transition color */
-    }
-    50% {
-        color: #f0f0f0; /* Another transition color */
-    }
-    75% {
-        color: #b4cf68; /* Another transition color */
-    }
-    100% {
-        color: #9b5b3c; /* Ending color matches the starting color for a seamless loop */
-    }
-}
-
-
 
 .nav__list {
     display: flex;
-    gap: 3rem; /* Space between the navigation links */
-    margin-left: auto; /* Align the list to the right */
-    flex-wrap: nowrap; /* Ensure items stay on one line */
+    gap: 2rem;
 }
 
 .nav__item {
@@ -64,8 +39,8 @@
 .nav__link {
     color: #ddd;
     font-weight: 600;
+    text-decoration: none;
     transition: color 0.4s;
-    text-decoration: none; /* Remove underline from links */
 }
 
 .nav__link:hover {
@@ -77,24 +52,62 @@
     color: #fff;
     border-radius: 4px;
     padding: 10px 20px;
-    flex-shrink: 0; /* Prevent the button from shrinking */
-    text-align: center;
 }
 
 .nav__cta:hover {
     background-color: #b4cf68;
-    box-shadow: 0 0 10px gold;
 }
 
-.nav__toggle,
-.nav__close {
-    font-size: 1.5rem;
-    color: var(--title-color);
+/* Hamburger menu styles */
+.nav__toggle {
+    display: none;
+    font-size: 2rem;
+    color: #fff;
     cursor: pointer;
 }
 
-.nav__close {
-    position: absolute;
-    top: 1rem;
-    right: 1.5rem;
+/* Mobile Menu */
+#nav-menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#nav-menu ul {
+    display: flex;
+    gap: 2rem;
+}
+
+/* Responsive design for screens smaller than 768px */
+@media (max-width: 768px) {
+    .nav__list {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 100%;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.9);
+        flex-direction: column; /* Stacks items vertically */
+        justify-content: center;
+        align-items: center;
+        transition: right 0.3s ease-in-out;
+        z-index: 2000; /* Ensure the dropdown is on top of everything */
+    }
+
+    .nav__item {
+        margin: 1rem 0; /* Space between items */
+    }
+
+    .nav__link {
+        font-size: 1.5rem;
+    }
+
+    .nav__toggle {
+        display: block;
+        z-index: 2000; /* Ensure the toggle button stays on top */
+    }
+
+    .nav__list.show {
+        right: 0;
+    }
 }

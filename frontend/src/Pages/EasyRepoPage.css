@@ -2,8 +2,9 @@
 .app {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: center;
   padding: 20px;
+  gap: 20px; /* Add gap for spacing between cards */
 }
 
 .card {
@@ -12,13 +13,40 @@
   padding: 16px;
   margin: 16px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  flex: 1 1 calc(33.333% - 32px); /* Adjust percentage and margin for spacing */
-  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
   background: linear-gradient(135deg, #2c3e50, #34495e); /* Dark blue gradient as base color */
   position: relative;
   overflow: hidden;
-  width: 300px; /* Set fixed width */
-  height: 300px; /* Set fixed height to make the card square */
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  width: calc(100% - 32px); /* Full width minus margin by default */
+  max-width: 300px; /* Set max width for cards */
+  height: auto; /* Let the height adjust based on content */
+  box-sizing: border-box; /* Ensure padding and border are included in the element's total width and height */
+}
+
+.card h2 {
+  margin-top: 0;
+  color: #f10707;
+  font-size: 1.5rem;
+  text-shadow: 0 0 5px rgba(184, 22, 22, 0.8);
+  word-wrap: break-word; /* Prevents overflowing text */
+}
+
+.card p {
+  margin: 8px 0;
+  color: #ddd;
+  word-wrap: break-word; /* Prevents overflowing text */
+}
+
+.card a {
+  color: #42b838;
+  text-decoration: none;
+  font-weight: bold;
+  word-wrap: break-word; /* Prevents overflowing text */
+}
+
+.card a:hover {
+  text-decoration: underline;
+  color: #420dc8; /* Neon orange color on hover */
 }
 
 .card::before {
@@ -41,30 +69,6 @@
   box-shadow: 0 0 20px rgba(204, 0, 0, 0.8); /* Glowing effect with deep red shade */
 }
 
-
-.card h2 {
-  margin-top: 0;
-  color: #f10707;
-  font-size: 1.5rem;
-  text-shadow: 0 0 5px rgba(184, 22, 22, 0.8);
-}
-
-.card p {
-  margin: 8px 0;
-  color: #ddd;
-}
-
-.card a {
-  color: #42b838;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-.card a:hover {
-  text-decoration: underline;
-  color: #420dc8; /* Neon orange color on hover */
-}
-
 @keyframes glow {
   0% {
     opacity: 0.3;
@@ -74,5 +78,33 @@
   }
   100% {
     opacity: 0.3;
+  }
+}
+
+@media (min-width: 470px) {
+  .card {
+    width: 100%; /* One card per row */
+    
+  }
+}
+
+/* Medium screens (Tablets) */
+@media (min-width: 640px) {
+  .card {
+    width: calc(50% - 32px); /* Two cards per row */
+  }
+}
+
+/* Large screens (Desktops) */
+@media (min-width: 1024px) {
+  .card {
+    width: calc(33.333% - 32px); /* Three cards per row */
+  }
+}
+
+/* Extra Large screens */
+@media (min-width: 1280px) {
+  .card {
+    width: calc(25% - 32px); /* Four cards per row */
   }
 }

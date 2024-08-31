@@ -25,25 +25,31 @@ const AboutUs = () => {
 
 const styles = {
   section: {
-    padding: '2rem',
-    backgroundColor: '#fff', // Background color changed to black
-    color: '#000', // Text color changed to white for better contrast
+    padding: '3rem 1rem',
+    backgroundColor: 'rgba(255, 255, 255, 0.8)', // Transparent white background
+    color: '#333', // Text color for better contrast with transparent background
+    backdropFilter: 'blur(10px)', // Adds a slight blur effect behind the section
   },
   container: {
     maxWidth: '800px',
     margin: '0 auto',
     textAlign: 'center',
+    padding: '2rem',
+    borderRadius: '12px', // Rounded corners for a smoother look
+    backgroundColor: 'rgba(255, 255, 255, 0.6)', // Slightly transparent container background
+    boxShadow: '0 4px 20px rgba(0, 0, 0, 0.1)', // Subtle shadow for a floating effect
   },
   heading: {
     fontSize: '2.5rem',
-    marginBottom: '1rem',
-    color: '#000', // Heading color changed to white
+    marginBottom: '1.5rem',
+    color: '#17153B', // A dark, elegant color for the heading
+    fontWeight: 'bold',
   },
   paragraph: {
-    fontSize: '1rem',
-    lineHeight: '1.6',
-    marginBottom: '1rem',
-    color: '#17153B', // Paragraph color changed to a lighter gray for readability
+    fontSize: '1.1rem',
+    lineHeight: '1.8',
+    marginBottom: '1.5rem',
+    color: '#333', // Slightly darker text color for readability
   },
 };
 

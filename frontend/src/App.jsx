@@ -1,3 +1,4 @@
+// App.jsx
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-router-dom';
 import Navbar from './Components/Navbar.jsx';
@@ -11,8 +12,10 @@ import Signup from './Components/SignUp.jsx';
 import Home from './Pages/Home.jsx';
 import Login from './Components/Login.jsx';
 import UserProvider from './Components/UserProvider.jsx';
-import LogosMarquee from './Components/LogosMarquee.jsx';
 import AboutUs from './Components/AboutUs.jsx';
+import Footer from './Components/Footer.jsx'; // Import the Footer component
+import './App.css';
+
 
 const Layout = ({ children }) => {
   const location = useLocation();
@@ -24,7 +27,7 @@ const Layout = ({ children }) => {
     <>
       {shouldShowComponents && (
         <>
-          <div
+          <div 
             style={{
               display: 'flex',
               justifyContent: 'center',
@@ -32,9 +35,11 @@ const Layout = ({ children }) => {
               margin: '20px 0',
             }}
           >
-            <EasyRepoButton />
-            <MediumRepoButton />
-            <HardRepoButton />
+            <div className="repo-buttons-container">
+              <EasyRepoButton />
+              <MediumRepoButton />
+              <HardRepoButton />
+            </div>
           </div>
         </>
       )}
@@ -49,22 +54,24 @@ const App = () => {
 
   return (
     <>
-    <UserProvider>
-      <Router>
-        <Navbar usertoken={usertoken} />
-        <Layout>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path ="/about-us"element={<AboutUs/>}/>
-            <Route path="/easyrepositories" element={<EasyRepoPage />} />
-            <Route path="/mediumrepositories" element={<MediumRepoPage />} />
-            <Route path="/hardrepositories" element={<HardRepoPage />} />
-            <Route path="/api/users/login" element={<Login setUsertoken={setUsertoken} />} />
-            <Route path="/api/users/signup" element={<Signup />} />
-          </Routes>
-        </Layout>
-      </Router>
-    </UserProvider>
+      <UserProvider>
+        <Router>
+          <Navbar usertoken={usertoken} />
+          <Layout>
+            <Routes>
+             <Route path="/" element={<Home />} />
+              <Route path="/about-us" element={<AboutUs />} />
+              <Route path="/easyrepositories" element={<EasyRepoPage />} />
+              <Route path="/mediumrepositories" element={<MediumRepoPage />} />
+              <Route path="/hardrepositories" element={<HardRepoPage />} />
+              <Route path="/api/users/login" element={<Login setUsertoken={setUsertoken} />} />
+              <Route path="/api/users/signup" element={<Signup />} />
+            </Routes>
+          </Layout>
+          
+          <Footer /> {/* Add the Footer component */}
+        </Router>
+      </UserProvider>
     </>
   );
 };

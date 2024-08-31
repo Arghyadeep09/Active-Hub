@@ -2,6 +2,7 @@ import React from "react";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "../index.css";
+import Body from '../Components/Body.jsx';
 
 const Home = () => {
   const navigate = useNavigate();
@@ -55,6 +56,7 @@ const Home = () => {
           </h1>
         </div>
       </div>
+      <Body/>
     </>
   );
 };

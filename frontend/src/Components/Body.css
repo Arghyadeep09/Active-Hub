@@ -1,0 +1,101 @@
+/* General styles */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: #333;
+  background-color: #f9f9f9; /* You can keep the body background color */
+}
+
+/* Container styling */
+.body-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: transparent; /* Changed to transparent */
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Header styling */
+.body-header {
+  text-align: center;
+  font-size: 2.25rem;
+  color: #1e1e20;
+  margin-bottom: 20px;
+  font-family: "Dancing Script, cursive"; /* Add this to give a cursive style to the header */
+}
+
+/* Content styling */
+.body-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.body-half {
+  width: 48%;
+  padding: 20px;
+  background-color: transparent; /* Changed to transparent */
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Image styling */
+.body-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.body-image img {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  aspect-ratio: 16/9; /* Maintain a consistent aspect ratio */
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  object-fit: cover; /* Ensures the image covers the defined area without distortion */
+}
+
+.body-full {
+  width: 100%;
+  padding: 20px;
+  background-color: transparent; /* Changed to transparent */
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Section titles */
+.section-title {
+  font-size: 1.5rem;
+  color: #1e1e20;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+/* Paragraph styling */
+p {
+  line-height: 2;
+  font-size: 15px;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  color: #555;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .body-half {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+
+  .body-full {
+    width: 100%;
+  }
+
+  .body-header {
+    font-size: 1.75rem;
+  }
+}

@@ -1,0 +1,68 @@
+/* Footer.css */
+.footer {
+    background: linear-gradient(135deg, #3b8d99, #6a1b29); /* Gradient background */
+    color: #fff;
+    padding: 40px 20px;
+    text-align: center;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  }
+  
+  .footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+  .footer-social {
+    margin-bottom: 20px;
+  }
+  
+  .social-link {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 1.5rem;
+    position: relative;
+    transition: color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .social-link:hover {
+    color: #f0f0f0;
+    transform: scale(1.1);
+  }
+  
+  .social-link::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: -5px;
+    width: 0;
+    height: 2px;
+    background: #fff;
+    transition: width 0.3s ease;
+  }
+  
+  .social-link:hover::before {
+    width: 100%;
+    left: 0;
+  }
+  
+  .footer-message {
+    font-size: 1.2rem;
+    font-weight: 300;
+    margin-top: 10px;
+  }
+  .footer-message p {
+    color: #fff;
+  }
+  /* Responsive styles */
+  @media (max-width: 600px) {
+    .social-link {
+      display: block;
+      margin: 10px 0;
+    }
+  }
+  

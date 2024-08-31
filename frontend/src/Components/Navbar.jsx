@@ -5,53 +5,51 @@ import "./Navbar.css";
 
 const Navbar = ({ usertoken }) => {
   const [token, setToken] = useState('');
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   useEffect(() => {
     if (usertoken) {
       setToken(usertoken);
     } else {
-      let timeout = setTimeout(() => {
+      const timeout = setTimeout(() => {
         const token1 = localStorage.getItem('token');
         setToken(token1);
-        console.log(token1);
       }, 2000);
 
-      return () => {
-        clearTimeout(timeout);
-      };
+      return () => clearTimeout(timeout);
     }
   }, [usertoken]);
-
-  console.log(token);
 
   const signout = () => {
     localStorage.removeItem('token');
     setToken('');
+    setIsMenuOpen(false); // Close menu on signout
+  };
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
   };
 
   return (
     <>
-      <header className="header custom-navbar"> {/* Added a new class custom-navbar */}
+      <header className="header">
         <nav className="nav container">
           <NavLink to="/" className="nav__logo">
             Active Hub
           </NavLink>
 
-          <div id="nav-menu">
-            <ul className="nav__list">
+          <div id="nav-menu" className={isMenuOpen ? "nav__list show" : "nav__list"}>
+            <ul>
               <li className="nav__item">
-                <NavLink to="/" className="nav__link">
+                <NavLink to="/" className="nav__link" onClick={toggleMenu}>
                   Home
                 </NavLink>
               </li>
-     
               <li className="nav__item">
-                <NavLink to="/about-us" className="nav__link">
+                <NavLink to="/about-us" className="nav__link" onClick={toggleMenu}>
                   About Us
                 </NavLink>
               </li>
-           
-       
               {token ? (
                 <li className="nav__item" onClick={signout}>
                   <NavLink to="/api/users/login" className="nav__link nav__cta">
@@ -60,16 +58,20 @@ const Navbar = ({ usertoken }) => {
                 </li>
               ) : (
                 <li className="nav__item">
-                  <NavLink to="/api/users/login" className="nav__link nav__cta">
+                  <NavLink to="/api/users/login" className="nav__link nav__cta" onClick={toggleMenu}>
                     SignIn
                   </NavLink>
                 </li>
               )}
             </ul>
-           
+            {isMenuOpen && (
+              <IoClose className="nav__toggle" onClick={toggleMenu} />
+            )}
           </div>
 
-         
+          {!isMenuOpen && (
+            <IoMenu className="nav__toggle" onClick={toggleMenu} />
+          )}
         </nav>
       </header>
     </>
@@ -77,6 +79,3 @@ const Navbar = ({ usertoken }) => {
 };
 
 export default Navbar;
-
-
-
